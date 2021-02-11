@@ -9,8 +9,8 @@ The app contains one module, the module is UIViewController decomposed into smal
 - **DisplayLogic** displays data
 - **Interactor** performs business logic
 - **Repository** provides data to business logic. Uses Combine to orchestrate with the service layer
-- **Presenter** to map data to a human-readable format
-- **Router** to route to other modules or open some links
+- **Presenter** maps data to a human-readable format
+- **Router** routes to other modules or open some links
 
 There is a service layer below the repository component
 - **WeatherApi** provides data according to contract
