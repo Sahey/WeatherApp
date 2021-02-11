@@ -16,6 +16,4 @@ There is a service layer below the repository component
 - **WeatherApi** provides data according to contract
 - **LocationProvider** provides current device location
 
-Here is a scheme:
-
-![](Weather.pdf)
+Here is a [class diagram](Weather.pdf)
