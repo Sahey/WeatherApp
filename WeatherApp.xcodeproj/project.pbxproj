@@ -26,6 +26,8 @@
 		A026AC2225D468AC00A95DCC /* WeatherApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A026AC2125D468AC00A95DCC /* WeatherApiService.swift */; };
 		A026AC2A25D46EA800A95DCC /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A026AC2925D46EA800A95DCC /* LocationProvider.swift */; };
 		A026AC3225D493B900A95DCC /* WeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A026AC3125D493B900A95DCC /* WeatherRouter.swift */; };
+		A0B7D4E125D7ED3E0004E3A8 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D4E025D7ED3E0004E3A8 /* DependencyContainer.swift */; };
+		A0B7D4E525D7FC180004E3A8 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D4E425D7FC180004E3A8 /* DependencyContainerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		A026AC2125D468AC00A95DCC /* WeatherApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiService.swift; sourceTree = "<group>"; };
 		A026AC2925D46EA800A95DCC /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		A026AC3125D493B900A95DCC /* WeatherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouter.swift; sourceTree = "<group>"; };
+		A0B7D4E025D7ED3E0004E3A8 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		A0B7D4E425D7FC180004E3A8 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				A026AAF225D445D700A95DCC /* WeatherAppTests.swift */,
+				A0B7D4E425D7FC180004E3A8 /* DependencyContainerTests.swift */,
 				A026AAF425D445D700A95DCC /* Info.plist */,
 			);
 			path = WeatherAppTests;
@@ -123,6 +128,7 @@
 		A026AB1A25D4466C00A95DCC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A0B7D4DF25D7ED260004E3A8 /* DependencyProvider */,
 				A026AB2525D446DC00A95DCC /* Modules */,
 				A026AC1F25D4688700A95DCC /* Services */,
 				A026ABE825D44ED600A95DCC /* Utils */,
@@ -181,6 +187,14 @@
 				A026AC2925D46EA800A95DCC /* LocationProvider.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A0B7D4DF25D7ED260004E3A8 /* DependencyProvider */ = {
+			isa = PBXGroup;
+			children = (
+				A0B7D4E025D7ED3E0004E3A8 /* DependencyContainer.swift */,
+			);
+			path = DependencyProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0B7D4E125D7ED3E0004E3A8 /* DependencyContainer.swift in Sources */,
 				A026ABEA25D44EE100A95DCC /* UIColor+Extension.swift in Sources */,
 				A026AC0D25D45DD900A95DCC /* WeatherIndicatorView.swift in Sources */,
 				A026AC2225D468AC00A95DCC /* WeatherApiService.swift in Sources */,
@@ -306,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A026AAF325D445D700A95DCC /* WeatherAppTests.swift in Sources */,
+				A0B7D4E525D7FC180004E3A8 /* DependencyContainerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

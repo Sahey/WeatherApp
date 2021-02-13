@@ -9,6 +9,25 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+    private let container: DependencyContainerImpl = {
+        let conainer = DependencyContainerImpl()
+        conainer.register(WeatherApiService.self) { _ in
+            WeatherApiServiceImpl()
+        }
+
+        conainer.register(LocationProvider.self) { _ in
+            LocationProviderImpl()
+        }
+
+        conainer.register(WeatherBuilder.self) { container in
+            let builder = WeatherBuilderImpl(
+                apiService: container.resolve(WeatherApiService.self)!,
+                locationProvider: container.resolve(LocationProvider.self)!
+            )
+            return builder
+        }
+        return conainer
+    }()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -19,7 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window.windowScene = windowScene
-        let builder = WeatherBuilderImpl(apiService: WeatherApiServiceImpl(), locationProvider: LocationProviderImpl())
+        let builder = container.resolve(WeatherBuilder.self)!
         window.rootViewController = builder.build()
         window.makeKeyAndVisible()
         self.window = window
