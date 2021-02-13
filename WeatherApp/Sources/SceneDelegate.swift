@@ -9,24 +9,15 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    private let container: DependencyContainerImpl = {
-        let conainer = DependencyContainerImpl()
-        conainer.register(WeatherApiService.self) { _ in
-            WeatherApiServiceImpl()
-        }
 
-        conainer.register(LocationProvider.self) { _ in
-            LocationProviderImpl()
-        }
-
-        conainer.register(WeatherBuilder.self) { container in
-            let builder = WeatherBuilderImpl(
-                apiService: container.resolve(WeatherApiService.self)!,
-                locationProvider: container.resolve(LocationProvider.self)!
-            )
-            return builder
-        }
-        return conainer
+    private let container = DependencyContainerImpl()
+    private lazy var assembler: DependencyAssembler = {
+        DependencyAssemblerImpl(
+            container: container,
+            assemblies: [
+                ComponentAssembly.services,
+                ComponentAssembly.screens
+            ])
     }()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -36,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UITableView.appearance().backgroundColor = .background
         guard let _ = (scene as? UIWindowScene) else { return }
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        assembler.assemble()
         let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window.windowScene = windowScene
         let builder = container.resolve(WeatherBuilder.self)!
