@@ -9,7 +9,8 @@ final class TabBarAssembly: DependencyAssembly {
     func assemble(container: DependencyContainer) {
         container.register(TabBarBuilder.self) { container in
             TabBarBuilderImpl(
-                weatherBuilder: container.resolve(WeatherBuilder.self)!
+                weatherBuilder: container.resolve(WeatherBuilder.self)!,
+                searchBuilder: container.resolve(SearchBuilder.self)!
             )
         }
     }

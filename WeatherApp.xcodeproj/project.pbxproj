@@ -36,6 +36,15 @@
 		A0B1236025D9AB1D003A4ED1 /* TabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1235F25D9AB1D003A4ED1 /* TabBarAssembly.swift */; };
 		A0B1236425D9AB25003A4ED1 /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1236325D9AB25003A4ED1 /* TabBarBuilder.swift */; };
 		A0B1236A25D9ADC1003A4ED1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1236925D9ADC1003A4ED1 /* UIViewController+Extension.swift */; };
+		A0B1237125D9B037003A4ED1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1237025D9B037003A4ED1 /* SearchViewController.swift */; };
+		A0B1237825D9B1A2003A4ED1 /* SearchBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1237725D9B1A2003A4ED1 /* SearchBuilder.swift */; };
+		A0B1237E25D9B1EB003A4ED1 /* SearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1237D25D9B1EB003A4ED1 /* SearchAssembly.swift */; };
+		A0B1238425D9B348003A4ED1 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1238325D9B348003A4ED1 /* SearchInteractor.swift */; };
+		A0B1238925D9B3B9003A4ED1 /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1238825D9B3B9003A4ED1 /* Geocoder.swift */; };
+		A0B1238F25D9B42E003A4ED1 /* GeocoderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1238E25D9B42E003A4ED1 /* GeocoderAssembly.swift */; };
+		A0B1239325D9B47C003A4ED1 /* SearchRepositiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1239225D9B47C003A4ED1 /* SearchRepositiry.swift */; };
+		A0B1239B25D9BC9F003A4ED1 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1239A25D9BC9F003A4ED1 /* SearchPresenter.swift */; };
+		A0B1239F25D9C903003A4ED1 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1239E25D9C903003A4ED1 /* SearchRouter.swift */; };
 		A0B7D4E125D7ED3E0004E3A8 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D4E025D7ED3E0004E3A8 /* DependencyContainer.swift */; };
 		A0B7D4E525D7FC180004E3A8 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D4E425D7FC180004E3A8 /* DependencyContainerTests.swift */; };
 		A0B7D4EF25D8075F0004E3A8 /* DependencyAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D4EE25D8075F0004E3A8 /* DependencyAssembler.swift */; };
@@ -91,6 +100,15 @@
 		A0B1235F25D9AB1D003A4ED1 /* TabBarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembly.swift; sourceTree = "<group>"; };
 		A0B1236325D9AB25003A4ED1 /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
 		A0B1236925D9ADC1003A4ED1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A0B1237025D9B037003A4ED1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A0B1237725D9B1A2003A4ED1 /* SearchBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBuilder.swift; sourceTree = "<group>"; };
+		A0B1237D25D9B1EB003A4ED1 /* SearchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAssembly.swift; sourceTree = "<group>"; };
+		A0B1238325D9B348003A4ED1 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		A0B1238825D9B3B9003A4ED1 /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
+		A0B1238E25D9B42E003A4ED1 /* GeocoderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderAssembly.swift; sourceTree = "<group>"; };
+		A0B1239225D9B47C003A4ED1 /* SearchRepositiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositiry.swift; sourceTree = "<group>"; };
+		A0B1239A25D9BC9F003A4ED1 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		A0B1239E25D9C903003A4ED1 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		A0B7D4E025D7ED3E0004E3A8 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		A0B7D4E425D7FC180004E3A8 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
 		A0B7D4EE25D8075F0004E3A8 /* DependencyAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyAssembler.swift; sourceTree = "<group>"; };
@@ -187,8 +205,9 @@
 		A026AB2525D446DC00A95DCC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A0B1235625D9A670003A4ED1 /* TabBar */,
 				A0B1234525D9A0DB003A4ED1 /* Root */,
+				A0B1235625D9A670003A4ED1 /* TabBar */,
+				A0B1236F25D9B02C003A4ED1 /* Search */,
 				A026AB2625D446EE00A95DCC /* Weather */,
 				A0B7D4F625D80E380004E3A8 /* ModuleAssembly.swift */,
 			);
@@ -234,6 +253,7 @@
 		A026AC1F25D4688700A95DCC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A0B1238725D9B3A9003A4ED1 /* Geocoder */,
 				A0B7D50125D80F370004E3A8 /* LocationProvider */,
 				A0B7D50025D80F2A0004E3A8 /* WeatherApi */,
 				A0B7D4FC25D80ED20004E3A8 /* ServiceAssembly.swift */,
@@ -259,6 +279,29 @@
 				A0B1235F25D9AB1D003A4ED1 /* TabBarAssembly.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		A0B1236F25D9B02C003A4ED1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A0B1237025D9B037003A4ED1 /* SearchViewController.swift */,
+				A0B1237725D9B1A2003A4ED1 /* SearchBuilder.swift */,
+				A0B1237D25D9B1EB003A4ED1 /* SearchAssembly.swift */,
+				A0B1238325D9B348003A4ED1 /* SearchInteractor.swift */,
+				A0B1239A25D9BC9F003A4ED1 /* SearchPresenter.swift */,
+				A0B1239225D9B47C003A4ED1 /* SearchRepositiry.swift */,
+				A0B1239E25D9C903003A4ED1 /* SearchRouter.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A0B1238725D9B3A9003A4ED1 /* Geocoder */ = {
+			isa = PBXGroup;
+			children = (
+				A0B1238825D9B3B9003A4ED1 /* Geocoder.swift */,
+				A0B1238E25D9B42E003A4ED1 /* GeocoderAssembly.swift */,
+			);
+			path = Geocoder;
 			sourceTree = "<group>";
 		};
 		A0B7D4DF25D7ED260004E3A8 /* DependencyProvider */ = {
@@ -389,16 +432,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0B1238425D9B348003A4ED1 /* SearchInteractor.swift in Sources */,
 				A0B7D4E125D7ED3E0004E3A8 /* DependencyContainer.swift in Sources */,
 				A0B1234B25D9A5FA003A4ED1 /* RootRouter.swift in Sources */,
 				A0B7D4EF25D8075F0004E3A8 /* DependencyAssembler.swift in Sources */,
+				A0B1238F25D9B42E003A4ED1 /* GeocoderAssembly.swift in Sources */,
 				A026ABEA25D44EE100A95DCC /* UIColor+Extension.swift in Sources */,
 				A026AC0D25D45DD900A95DCC /* WeatherIndicatorView.swift in Sources */,
 				A026AC2225D468AC00A95DCC /* WeatherApiService.swift in Sources */,
 				A026ABE125D44ABC00A95DCC /* WeatherRepository.swift in Sources */,
+				A0B1237125D9B037003A4ED1 /* SearchViewController.swift in Sources */,
+				A0B1238925D9B3B9003A4ED1 /* Geocoder.swift in Sources */,
 				A0B1234725D9A0E9003A4ED1 /* RootInteractor.swift in Sources */,
+				A0B1239F25D9C903003A4ED1 /* SearchRouter.swift in Sources */,
 				A026ABDC25D44A6900A95DCC /* WeatherPresenter.swift in Sources */,
 				A0B1234F25D9A600003A4ED1 /* RootBuilder.swift in Sources */,
+				A0B1237825D9B1A2003A4ED1 /* SearchBuilder.swift in Sources */,
 				A0B7D4F725D80E380004E3A8 /* ModuleAssembly.swift in Sources */,
 				A0B1236A25D9ADC1003A4ED1 /* UIViewController+Extension.swift in Sources */,
 				A011AC0925D99D010082E0D3 /* DeeplinkStep.swift in Sources */,
@@ -408,10 +457,13 @@
 				A0B7D4FD25D80ED20004E3A8 /* ServiceAssembly.swift in Sources */,
 				A026AB2B25D4475B00A95DCC /* WeatherViewController.swift in Sources */,
 				A0B7D4F325D809AA0004E3A8 /* WeatherAssembly.swift in Sources */,
+				A0B1239B25D9BC9F003A4ED1 /* SearchPresenter.swift in Sources */,
+				A0B1239325D9B47C003A4ED1 /* SearchRepositiry.swift in Sources */,
 				A0B7D50325D80F4C0004E3A8 /* LocationProviderAssembly.swift in Sources */,
 				A026ABF225D4512100A95DCC /* WeatherBuilder.swift in Sources */,
 				A026AC0525D456EA00A95DCC /* TableViewCell.swift in Sources */,
 				A026AB1E25D4466C00A95DCC /* SceneDelegate.swift in Sources */,
+				A0B1237E25D9B1EB003A4ED1 /* SearchAssembly.swift in Sources */,
 				A0B1235325D9A609003A4ED1 /* RootAssembly.swift in Sources */,
 				A026AC3225D493B900A95DCC /* WeatherRouter.swift in Sources */,
 				A0B1236025D9AB1D003A4ED1 /* TabBarAssembly.swift in Sources */,

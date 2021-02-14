@@ -10,6 +10,7 @@ extension ComponentAssembly {
     static var screens: DependencyAssembly {
         ComponentAssembly(
             WeatherAssembly(),
+            SearchAssembly(),
             TabBarAssembly(),
             RootAssembly()
         )

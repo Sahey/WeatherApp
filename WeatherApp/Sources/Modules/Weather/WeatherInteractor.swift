@@ -19,11 +19,13 @@ final class WeatherInteractorImpl {
     private let presenter: WeatherPresenter
     private let router: WeatherRouter
     private let repository: WeatherRepository
+    private var selectedPlace: Search.Response.Place?
 
-    init(presenter: WeatherPresenter, router: WeatherRouter, repository: WeatherRepository) {
+    init(presenter: WeatherPresenter, router: WeatherRouter, repository: WeatherRepository, selectedPlace: Search.Response.Place?) {
         self.presenter = presenter
         self.router = router
         self.repository = repository
+        self.selectedPlace = selectedPlace
     }
 
     private func fetchData(request: Weather.Request) {
@@ -59,7 +61,7 @@ final class WeatherInteractorImpl {
 
 extension WeatherInteractorImpl: WeatherInteractor {
     func didLoadView() {
-        fetchData(request: Weather.Request(location: nil))
+        fetchData(request: Weather.Request(location: selectedPlace?.location))
     }
 
     func didTapRetry() {

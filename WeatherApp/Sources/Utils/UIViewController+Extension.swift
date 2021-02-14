@@ -12,4 +12,9 @@ extension UIViewController {
         self.tabBarItem = tabBarItem
         return self
     }
+
+    func title(_ title: String) -> Self {
+        self.title = title
+        return self
+    }
 }

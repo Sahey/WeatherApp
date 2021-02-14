@@ -13,15 +13,19 @@ protocol TabBarBuilder {
 
 final class TabBarBuilderImpl: TabBarBuilder {
     private let weatherBuilder: WeatherBuilder
+    private let searchBuilder: SearchBuilder
 
     private var viewControllers: [UIViewController] {
         [
-            weatherBuilder.build().tabBarItem(UITabBarItem(title: nil, image: UIImage(systemName: "cloud.sun.rain"), tag: 0))
+            UINavigationController(rootViewController: weatherBuilder.build(input: .default).title("Current location forecast"))
+                .tabBarItem(UITabBarItem(title: nil, image: UIImage(systemName: "cloud.sun.rain"), tag: 0)),
+            searchBuilder.build().tabBarItem(UITabBarItem(title: nil, image: UIImage(systemName: "magnifyingglass"), tag: 1))
         ]
     }
 
-    init(weatherBuilder: WeatherBuilder) {
+    init(weatherBuilder: WeatherBuilder, searchBuilder: SearchBuilder) {
         self.weatherBuilder = weatherBuilder
+        self.searchBuilder = searchBuilder
     }
 
     func build() -> UIViewController {

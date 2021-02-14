@@ -9,7 +9,8 @@ extension ComponentAssembly {
     static var services: DependencyAssembly {
         ComponentAssembly(
             WeatherApiServiceAssembly(),
-            LocationProviderAssembly()
+            LocationProviderAssembly(),
+            GeocoderAssembly()
         )
     }
 }
