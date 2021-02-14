@@ -29,6 +29,13 @@
 		A026AC2225D468AC00A95DCC /* WeatherApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A026AC2125D468AC00A95DCC /* WeatherApiService.swift */; };
 		A026AC2A25D46EA800A95DCC /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A026AC2925D46EA800A95DCC /* LocationProvider.swift */; };
 		A026AC3225D493B900A95DCC /* WeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A026AC3125D493B900A95DCC /* WeatherRouter.swift */; };
+		A0B1234725D9A0E9003A4ED1 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1234625D9A0E9003A4ED1 /* RootInteractor.swift */; };
+		A0B1234B25D9A5FA003A4ED1 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1234A25D9A5FA003A4ED1 /* RootRouter.swift */; };
+		A0B1234F25D9A600003A4ED1 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1234E25D9A600003A4ED1 /* RootBuilder.swift */; };
+		A0B1235325D9A609003A4ED1 /* RootAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1235225D9A609003A4ED1 /* RootAssembly.swift */; };
+		A0B1236025D9AB1D003A4ED1 /* TabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1235F25D9AB1D003A4ED1 /* TabBarAssembly.swift */; };
+		A0B1236425D9AB25003A4ED1 /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1236325D9AB25003A4ED1 /* TabBarBuilder.swift */; };
+		A0B1236A25D9ADC1003A4ED1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1236925D9ADC1003A4ED1 /* UIViewController+Extension.swift */; };
 		A0B7D4E125D7ED3E0004E3A8 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D4E025D7ED3E0004E3A8 /* DependencyContainer.swift */; };
 		A0B7D4E525D7FC180004E3A8 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D4E425D7FC180004E3A8 /* DependencyContainerTests.swift */; };
 		A0B7D4EF25D8075F0004E3A8 /* DependencyAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D4EE25D8075F0004E3A8 /* DependencyAssembler.swift */; };
@@ -77,6 +84,13 @@
 		A026AC2125D468AC00A95DCC /* WeatherApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiService.swift; sourceTree = "<group>"; };
 		A026AC2925D46EA800A95DCC /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		A026AC3125D493B900A95DCC /* WeatherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouter.swift; sourceTree = "<group>"; };
+		A0B1234625D9A0E9003A4ED1 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		A0B1234A25D9A5FA003A4ED1 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		A0B1234E25D9A600003A4ED1 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
+		A0B1235225D9A609003A4ED1 /* RootAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAssembly.swift; sourceTree = "<group>"; };
+		A0B1235F25D9AB1D003A4ED1 /* TabBarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembly.swift; sourceTree = "<group>"; };
+		A0B1236325D9AB25003A4ED1 /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
+		A0B1236925D9ADC1003A4ED1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A0B7D4E025D7ED3E0004E3A8 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		A0B7D4E425D7FC180004E3A8 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
 		A0B7D4EE25D8075F0004E3A8 /* DependencyAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyAssembler.swift; sourceTree = "<group>"; };
@@ -173,6 +187,8 @@
 		A026AB2525D446DC00A95DCC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A0B1235625D9A670003A4ED1 /* TabBar */,
+				A0B1234525D9A0DB003A4ED1 /* Root */,
 				A026AB2625D446EE00A95DCC /* Weather */,
 				A0B7D4F625D80E380004E3A8 /* ModuleAssembly.swift */,
 			);
@@ -199,6 +215,7 @@
 			children = (
 				A026ABE925D44EE100A95DCC /* UIColor+Extension.swift */,
 				A026AC0425D456EA00A95DCC /* TableViewCell.swift */,
+				A0B1236925D9ADC1003A4ED1 /* UIViewController+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -222,6 +239,26 @@
 				A0B7D4FC25D80ED20004E3A8 /* ServiceAssembly.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A0B1234525D9A0DB003A4ED1 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				A0B1234625D9A0E9003A4ED1 /* RootInteractor.swift */,
+				A0B1234A25D9A5FA003A4ED1 /* RootRouter.swift */,
+				A0B1234E25D9A600003A4ED1 /* RootBuilder.swift */,
+				A0B1235225D9A609003A4ED1 /* RootAssembly.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		A0B1235625D9A670003A4ED1 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A0B1236325D9AB25003A4ED1 /* TabBarBuilder.swift */,
+				A0B1235F25D9AB1D003A4ED1 /* TabBarAssembly.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		A0B7D4DF25D7ED260004E3A8 /* DependencyProvider */ = {
@@ -353,13 +390,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0B7D4E125D7ED3E0004E3A8 /* DependencyContainer.swift in Sources */,
+				A0B1234B25D9A5FA003A4ED1 /* RootRouter.swift in Sources */,
 				A0B7D4EF25D8075F0004E3A8 /* DependencyAssembler.swift in Sources */,
 				A026ABEA25D44EE100A95DCC /* UIColor+Extension.swift in Sources */,
 				A026AC0D25D45DD900A95DCC /* WeatherIndicatorView.swift in Sources */,
 				A026AC2225D468AC00A95DCC /* WeatherApiService.swift in Sources */,
 				A026ABE125D44ABC00A95DCC /* WeatherRepository.swift in Sources */,
+				A0B1234725D9A0E9003A4ED1 /* RootInteractor.swift in Sources */,
 				A026ABDC25D44A6900A95DCC /* WeatherPresenter.swift in Sources */,
+				A0B1234F25D9A600003A4ED1 /* RootBuilder.swift in Sources */,
 				A0B7D4F725D80E380004E3A8 /* ModuleAssembly.swift in Sources */,
+				A0B1236A25D9ADC1003A4ED1 /* UIViewController+Extension.swift in Sources */,
 				A011AC0925D99D010082E0D3 /* DeeplinkStep.swift in Sources */,
 				A011ABFD25D98DF20082E0D3 /* DeeplinkFlow.swift in Sources */,
 				A026AB1D25D4466C00A95DCC /* AppDelegate.swift in Sources */,
@@ -371,10 +412,13 @@
 				A026ABF225D4512100A95DCC /* WeatherBuilder.swift in Sources */,
 				A026AC0525D456EA00A95DCC /* TableViewCell.swift in Sources */,
 				A026AB1E25D4466C00A95DCC /* SceneDelegate.swift in Sources */,
+				A0B1235325D9A609003A4ED1 /* RootAssembly.swift in Sources */,
 				A026AC3225D493B900A95DCC /* WeatherRouter.swift in Sources */,
+				A0B1236025D9AB1D003A4ED1 /* TabBarAssembly.swift in Sources */,
 				A0B7D50925D80F980004E3A8 /* WeatherApiServiceAssembly.swift in Sources */,
 				A026AC2A25D46EA800A95DCC /* LocationProvider.swift in Sources */,
 				A026ABF825D4556700A95DCC /* TemperatureView.swift in Sources */,
+				A0B1236425D9AB25003A4ED1 /* TabBarBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

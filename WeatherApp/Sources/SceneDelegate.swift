@@ -7,10 +7,14 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    var window: UIWindow?
+protocol AppAssembler {
+    var container: DependencyContainer { get }
 
-    private let container = DependencyContainerImpl()
+    func assemble()
+}
+
+final class AppAssemblerImpl: AppAssembler {
+    var container: DependencyContainer = DependencyContainerImpl()
     private lazy var assembler: DependencyAssembler = {
         DependencyAssemblerImpl(
             container: container,
@@ -20,20 +24,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             ])
     }()
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        UITableView.appearance().backgroundColor = .background
-        guard let _ = (scene as? UIWindowScene) else { return }
-        guard let windowScene = (scene as? UIWindowScene) else { return }
+    func assemble() {
         assembler.assemble()
-        let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window.windowScene = windowScene
-        let builder = container.resolve(WeatherBuilder.self)!
-        window.rootViewController = builder.build()
-        window.makeKeyAndVisible()
-        self.window = window
+    }
+}
+
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    var window: UIWindow?
+
+    private let appAssembler: AppAssembler = {
+        let appAssembler = AppAssemblerImpl()
+        appAssembler.assemble()
+        return appAssembler
+    }()
+    private var root: RootInteractor?
+
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            self.window = window
+
+            let appBuilder = appAssembler.container.resolve(RootBuilder.self)!
+            let root = appBuilder.build(input: RootBuilderInput(window: window))
+            root.startApp()
+            self.root = root
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
