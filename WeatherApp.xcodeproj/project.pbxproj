@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A011ABFD25D98DF20082E0D3 /* DeeplinkFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011ABFC25D98DF20082E0D3 /* DeeplinkFlow.swift */; };
+		A011AC0325D98EB10082E0D3 /* DeeplinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011AC0225D98EB10082E0D3 /* DeeplinkTests.swift */; };
+		A011AC0925D99D010082E0D3 /* DeeplinkStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011AC0825D99D010082E0D3 /* DeeplinkStep.swift */; };
 		A026AAE525D445D600A95DCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A026AAE425D445D600A95DCC /* Assets.xcassets */; };
 		A026AAE825D445D600A95DCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A026AAE625D445D600A95DCC /* LaunchScreen.storyboard */; };
 		A026AAF325D445D700A95DCC /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A026AAF225D445D700A95DCC /* WeatherAppTests.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A011ABFC25D98DF20082E0D3 /* DeeplinkFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkFlow.swift; sourceTree = "<group>"; };
+		A011AC0225D98EB10082E0D3 /* DeeplinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkTests.swift; sourceTree = "<group>"; };
+		A011AC0825D99D010082E0D3 /* DeeplinkStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkStep.swift; sourceTree = "<group>"; };
 		A026AAD825D445D500A95DCC /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A026AAE425D445D600A95DCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A026AAE725D445D600A95DCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A011ABFB25D98DE70082E0D3 /* Deeplink */ = {
+			isa = PBXGroup;
+			children = (
+				A011ABFC25D98DF20082E0D3 /* DeeplinkFlow.swift */,
+				A011AC0825D99D010082E0D3 /* DeeplinkStep.swift */,
+			);
+			path = Deeplink;
+			sourceTree = "<group>";
+		};
 		A026AACF25D445D500A95DCC = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +131,7 @@
 			children = (
 				A026AAF225D445D700A95DCC /* WeatherAppTests.swift */,
 				A026AAF425D445D700A95DCC /* Info.plist */,
+				A011AC0225D98EB10082E0D3 /* DeeplinkTests.swift */,
 			);
 			path = WeatherAppTests;
 			sourceTree = "<group>";
@@ -123,6 +139,7 @@
 		A026AB1A25D4466C00A95DCC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A011ABFB25D98DE70082E0D3 /* Deeplink */,
 				A026AB2525D446DC00A95DCC /* Modules */,
 				A026AC1F25D4688700A95DCC /* Services */,
 				A026ABE825D44ED600A95DCC /* Utils */,
@@ -289,6 +306,8 @@
 				A026AC2225D468AC00A95DCC /* WeatherApiService.swift in Sources */,
 				A026ABE125D44ABC00A95DCC /* WeatherRepository.swift in Sources */,
 				A026ABDC25D44A6900A95DCC /* WeatherPresenter.swift in Sources */,
+				A011AC0925D99D010082E0D3 /* DeeplinkStep.swift in Sources */,
+				A011ABFD25D98DF20082E0D3 /* DeeplinkFlow.swift in Sources */,
 				A026AB1D25D4466C00A95DCC /* AppDelegate.swift in Sources */,
 				A026ABD725D44A1400A95DCC /* WeatherInteractor.swift in Sources */,
 				A026AB2B25D4475B00A95DCC /* WeatherViewController.swift in Sources */,
@@ -306,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A026AAF325D445D700A95DCC /* WeatherAppTests.swift in Sources */,
+				A011AC0325D98EB10082E0D3 /* DeeplinkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
