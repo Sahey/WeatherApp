@@ -73,7 +73,7 @@ protocol WeatherApiService {
 
 final class WeatherApiServiceImpl: WeatherApiService {
     func fetch(request: WeatherApi.Request, completion: @escaping (Result<WeatherApi.Response, WeatherApi.Error>) -> Void) {
-        let url = URL(string: "https://api.darksky.net/forecast/2bb07c3bece89caf533ac9a5d23d8417/\(request.location.latitude),\(request.location.longitude)")
+        let url = URL(string: "https://api.darksky.net/forecast/2bb07c3bece89caf533ac9a5d23d8417/\(request.location.latitude),\(request.location.longitude)?units=si")
         let task = URLSession.shared.dataTask(with: url!) { data, _, error in
             guard let data = data else {
                 completion(.failure(.noData))

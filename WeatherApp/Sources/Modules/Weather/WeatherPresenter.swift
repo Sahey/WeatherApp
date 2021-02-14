@@ -154,7 +154,7 @@ extension WeatherPresenterImpl {
         guard let pressure = response.pressure else { return nil }
         let viewModel = WeatherIndicatorViewModel(
             title: "Pressure",
-            value: createPrettyMeasurement(pressure, unit: UnitPressure.millimetersOfMercury)
+            value: createPrettyMeasurement(pressure, unit: UnitPressure.hectopascals)
         )
         return .indicator(viewModel: viewModel)
     }
