@@ -5,7 +5,13 @@
 //  Created by sahey on 14.02.2021.
 //
 
+import Combine
 import UIKit
+
+protocol SearchDeeplinkable {
+    func openWeather(input: OpenForecastFlow.Input) -> AnyPublisher<SearchDeeplinkable, Never>
+    func searchForecast(input: SearchForecastFlow.Input) -> AnyPublisher<SearchDeeplinkable, Never>
+}
 
 protocol SearchDisplayLogic: AnyObject {
     func diplay(viewModel: Search.ViewModel)
@@ -98,5 +104,19 @@ private extension UITableViewCell {
         textLabel?.text = viewModel.title
         detailTextLabel?.text = viewModel.subtitle
         return self
+    }
+}
+
+extension SearchViewController: SearchDeeplinkable {
+    func searchForecast(input: SearchForecastFlow.Input) -> AnyPublisher<SearchDeeplinkable, Never> {
+        navigationItem.searchController?.isActive = true
+        navigationItem.searchController?.searchBar.text = input.query
+        interactor.didSearch(query: input.query)
+        return Just(self).eraseToAnyPublisher()
+    }
+
+    func openWeather(input: OpenForecastFlow.Input) -> AnyPublisher<SearchDeeplinkable, Never> {
+        interactor.didDeeplink(input: input)
+        return Just(self).eraseToAnyPublisher()
     }
 }

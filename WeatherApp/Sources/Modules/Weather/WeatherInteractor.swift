@@ -19,9 +19,9 @@ final class WeatherInteractorImpl {
     private let presenter: WeatherPresenter
     private let router: WeatherRouter
     private let repository: WeatherRepository
-    private var selectedPlace: Search.Response.Place?
+    private var selectedPlace: WeatherBuilderInput.Place?
 
-    init(presenter: WeatherPresenter, router: WeatherRouter, repository: WeatherRepository, selectedPlace: Search.Response.Place?) {
+    init(presenter: WeatherPresenter, router: WeatherRouter, repository: WeatherRepository, selectedPlace: WeatherBuilderInput.Place?) {
         self.presenter = presenter
         self.router = router
         self.repository = repository

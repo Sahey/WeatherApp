@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SearchBuilder {
-    func build() -> UIViewController
+    func build() -> UIViewController & SearchDeeplinkable
 }
 
 final class SearchBuilderImpl: SearchBuilder {
@@ -20,7 +20,7 @@ final class SearchBuilderImpl: SearchBuilder {
         self.weatherBuilder = weatherBuilder
     }
 
-    func build() -> UIViewController {
+    func build() -> UIViewController & SearchDeeplinkable {
         let presenter = SearchPresenterImpl()
         let repository = SearchRepositoryImpl(geocoder: geocoder)
         let router = SearchRouterImpl(weatherBuilder: weatherBuilder)
@@ -28,6 +28,6 @@ final class SearchBuilderImpl: SearchBuilder {
         let view = SearchViewController(interactor: interactor)
         presenter.view = view
         router.viewController = view
-        return UINavigationController(rootViewController: view)
+        return view
     }
 }

@@ -12,6 +12,7 @@ import Foundation
 protocol SearchInteractor {
     func didSearch(query: String)
     func didSelectLocation(identifier: Int)
+    func didDeeplink(input: OpenForecastFlow.Input)
 }
 
 final class SearchInteractorImpl {
@@ -73,5 +74,9 @@ extension SearchInteractorImpl: SearchInteractor {
     func didSelectLocation(identifier: Int) {
         guard let place = places[identifier] else { return }
         router.routeToForecast(place: place)
+    }
+
+    func didDeeplink(input: OpenForecastFlow.Input) {
+        router.routeToForecast(input: input)
     }
 }

@@ -12,7 +12,7 @@ struct RootBuilderInput {
 }
 
 protocol RootBuilder {
-    func build(input: RootBuilderInput) -> RootInteractor
+    func build(input: RootBuilderInput) -> RootInteractor & RootDeeplinkable
 }
 
 final class RootBuilderImpl: RootBuilder {
@@ -22,7 +22,7 @@ final class RootBuilderImpl: RootBuilder {
         self.tabBarBuilder = tabBarBuilder
     }
 
-    func build(input: RootBuilderInput) -> RootInteractor {
+    func build(input: RootBuilderInput) -> RootInteractor & RootDeeplinkable {
         let router = RootRouterImpl(window: input.window, tabBarBuilder: tabBarBuilder)
         let interactor = RootInteractorImpl(router: router)
         return interactor

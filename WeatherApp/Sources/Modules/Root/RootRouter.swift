@@ -8,7 +8,7 @@
 import UIKit
 
 protocol RootRouter {
-    func routeToTabBar()
+    func routeToTabBar() -> TabBarDeeplinkable
 }
 
 final class RootRouterImpl: RootRouter {
@@ -20,8 +20,10 @@ final class RootRouterImpl: RootRouter {
         self.tabBarBuilder = tabBarBuilder
     }
 
-    func routeToTabBar() {
-        window.rootViewController = tabBarBuilder.build()
+    func routeToTabBar() -> TabBarDeeplinkable {
+        let tabBar = tabBarBuilder.build()
+        window.rootViewController = tabBar
         window.makeKeyAndVisible()
+        return tabBar
     }
 }

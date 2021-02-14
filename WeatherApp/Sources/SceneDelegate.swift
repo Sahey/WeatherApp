@@ -37,17 +37,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appAssembler.assemble()
         return appAssembler
     }()
-    private var root: RootInteractor?
+
+    private lazy var root: (RootInteractor & RootDeeplinkable) = {
+        let appBuilder = appAssembler.container.resolve(RootBuilder.self)!
+        return appBuilder.build(input: RootBuilderInput(window: window!))
+    }()
+
+    private lazy var deeplinkRouter: DeeplinkRouter = {
+        DeeplinkRouterImpl(root: root)
+    }()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             self.window = window
-
-            let appBuilder = appAssembler.container.resolve(RootBuilder.self)!
-            let root = appBuilder.build(input: RootBuilderInput(window: window))
             root.startApp()
-            self.root = root
+        }
+        testDeeplink()
+    }
+
+    private func testDeeplink() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            self.deeplinkRouter.route(url: URL(string:"weather://searchForecast")!)
+            self.deeplinkRouter.route(url: URL(string:"weather://openForecast")!)
         }
     }
 

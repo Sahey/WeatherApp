@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import CoreLocation
 
 struct WeatherBuilderInput {
-    let place: Search.Response.Place?
+    struct Place {
+        let name: String?
+        let location: CLLocationCoordinate2D
+    }
+    let place: Place?
 
     static var `default`: WeatherBuilderInput { WeatherBuilderInput(place: nil) }
 }

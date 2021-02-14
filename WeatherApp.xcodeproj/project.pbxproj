@@ -45,6 +45,8 @@
 		A0B1239325D9B47C003A4ED1 /* SearchRepositiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1239225D9B47C003A4ED1 /* SearchRepositiry.swift */; };
 		A0B1239B25D9BC9F003A4ED1 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1239A25D9BC9F003A4ED1 /* SearchPresenter.swift */; };
 		A0B1239F25D9C903003A4ED1 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1239E25D9C903003A4ED1 /* SearchRouter.swift */; };
+		A0B123A925D9D9DC003A4ED1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B123A825D9D9DC003A4ED1 /* TabBarController.swift */; };
+		A0B123B625D9E31C003A4ED1 /* DeeplinkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B123B525D9E31C003A4ED1 /* DeeplinkRouter.swift */; };
 		A0B7D4E125D7ED3E0004E3A8 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D4E025D7ED3E0004E3A8 /* DependencyContainer.swift */; };
 		A0B7D4E525D7FC180004E3A8 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D4E425D7FC180004E3A8 /* DependencyContainerTests.swift */; };
 		A0B7D4EF25D8075F0004E3A8 /* DependencyAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D4EE25D8075F0004E3A8 /* DependencyAssembler.swift */; };
@@ -109,6 +111,8 @@
 		A0B1239225D9B47C003A4ED1 /* SearchRepositiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositiry.swift; sourceTree = "<group>"; };
 		A0B1239A25D9BC9F003A4ED1 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		A0B1239E25D9C903003A4ED1 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		A0B123A825D9D9DC003A4ED1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A0B123B525D9E31C003A4ED1 /* DeeplinkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkRouter.swift; sourceTree = "<group>"; };
 		A0B7D4E025D7ED3E0004E3A8 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		A0B7D4E425D7FC180004E3A8 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
 		A0B7D4EE25D8075F0004E3A8 /* DependencyAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyAssembler.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		A026AB2525D446DC00A95DCC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A0B123B025D9E019003A4ED1 /* DeeplinkRouter */,
 				A0B1234525D9A0DB003A4ED1 /* Root */,
 				A0B1235625D9A670003A4ED1 /* TabBar */,
 				A0B1236F25D9B02C003A4ED1 /* Search */,
@@ -277,6 +282,7 @@
 			children = (
 				A0B1236325D9AB25003A4ED1 /* TabBarBuilder.swift */,
 				A0B1235F25D9AB1D003A4ED1 /* TabBarAssembly.swift */,
+				A0B123A825D9D9DC003A4ED1 /* TabBarController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -302,6 +308,14 @@
 				A0B1238E25D9B42E003A4ED1 /* GeocoderAssembly.swift */,
 			);
 			path = Geocoder;
+			sourceTree = "<group>";
+		};
+		A0B123B025D9E019003A4ED1 /* DeeplinkRouter */ = {
+			isa = PBXGroup;
+			children = (
+				A0B123B525D9E31C003A4ED1 /* DeeplinkRouter.swift */,
+			);
+			path = DeeplinkRouter;
 			sourceTree = "<group>";
 		};
 		A0B7D4DF25D7ED260004E3A8 /* DependencyProvider */ = {
@@ -447,11 +461,13 @@
 				A0B1239F25D9C903003A4ED1 /* SearchRouter.swift in Sources */,
 				A026ABDC25D44A6900A95DCC /* WeatherPresenter.swift in Sources */,
 				A0B1234F25D9A600003A4ED1 /* RootBuilder.swift in Sources */,
+				A0B123A925D9D9DC003A4ED1 /* TabBarController.swift in Sources */,
 				A0B1237825D9B1A2003A4ED1 /* SearchBuilder.swift in Sources */,
 				A0B7D4F725D80E380004E3A8 /* ModuleAssembly.swift in Sources */,
 				A0B1236A25D9ADC1003A4ED1 /* UIViewController+Extension.swift in Sources */,
 				A011AC0925D99D010082E0D3 /* DeeplinkStep.swift in Sources */,
 				A011ABFD25D98DF20082E0D3 /* DeeplinkFlow.swift in Sources */,
+				A0B123B625D9E31C003A4ED1 /* DeeplinkRouter.swift in Sources */,
 				A026AB1D25D4466C00A95DCC /* AppDelegate.swift in Sources */,
 				A026ABD725D44A1400A95DCC /* WeatherInteractor.swift in Sources */,
 				A0B7D4FD25D80ED20004E3A8 /* ServiceAssembly.swift in Sources */,
