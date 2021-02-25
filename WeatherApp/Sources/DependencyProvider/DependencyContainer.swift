@@ -40,7 +40,7 @@ extension DependencyContainerImpl: DependencyContainer {
 
     func register<Dependency>(_ type: Dependency.Type, name: String, factory: @escaping DependencyFactory<Dependency>) {
         let key = getKey(for: type, name: name)
-        let value = factory(self)
+        let value = factory
         storage.set(dependency: value, for: key)
     }
 
@@ -50,7 +50,8 @@ extension DependencyContainerImpl: DependencyContainer {
 
     func resolve<Dependency>(_ type: Dependency.Type, name: String) -> Dependency? {
         let key = getKey(for: type, name: name)
-        return storage.dependency(key: key) as? Dependency
+        let factory = storage.dependency(key: key) as? DependencyFactory<Dependency>
+        return factory?(self)
     }
 
     func resolve<Dependency>(_ type: Dependency.Type) -> Dependency? {

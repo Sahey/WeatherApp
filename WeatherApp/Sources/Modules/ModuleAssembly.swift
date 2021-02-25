@@ -8,6 +8,11 @@
 
 extension ComponentAssembly {
     static var screens: DependencyAssembly {
-        ComponentAssembly(WeatherAssembly())
+        ComponentAssembly(
+            WeatherAssembly(),
+            SearchAssembly(),
+            TabBarAssembly(),
+            RootAssembly()
+        )
     }
 }
