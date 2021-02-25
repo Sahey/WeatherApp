@@ -46,7 +46,6 @@ final class SearchViewController: UIViewController {
     }
 
     private func setup() {
-        title = "Weather forecast"
         setupSearchController()
     }
 
@@ -111,7 +110,9 @@ extension SearchViewController: SearchDeeplinkable {
     func searchForecast(input: SearchForecastFlow.Input) -> AnyPublisher<SearchDeeplinkable, Never> {
         navigationItem.searchController?.isActive = true
         navigationItem.searchController?.searchBar.text = input.query
-        interactor.didSearch(query: input.query)
+        if let query = input.query {
+            interactor.didSearch(query: query)
+        }
         return Just(self).eraseToAnyPublisher()
     }
 

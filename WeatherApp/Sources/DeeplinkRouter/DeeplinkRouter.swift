@@ -34,7 +34,7 @@ final class OpenForecastFlow: DeeplinkFlow<RootDeeplinkable> {
 
 final class SearchForecastFlow: DeeplinkFlow<RootDeeplinkable> {
     struct Input {
-        let query: String
+        let query: String?
     }
 
     init(input: Input) {
@@ -58,6 +58,11 @@ protocol DeeplinkRouter {
     func route(url: URL)
 }
 
+enum Deeplink: String {
+    case openForecast
+    case search
+}
+
 final class DeeplinkRouterImpl {
     enum Flow {
         case openForecast(flow: OpenForecastFlow)
@@ -72,23 +77,39 @@ final class DeeplinkRouterImpl {
     }
 
     private func createFlow(url: URL) -> Flow? {
-        if url.absoluteString.contains("openForecast") {
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              let host = components.host else { return nil }
+        var parameters = [String: String]()
+        components.queryItems?.forEach {
+            parameters[$0.name] = $0.value
+        }
+        switch host {
+        case .openForecast:
+            guard let latStr = parameters["lat"],
+                  let lonStr = parameters["lon"],
+                  let lat = Double(latStr),
+                  let lon = Double(lonStr) else { return nil }
+            let input = OpenForecastFlow.Input(
+                name: parameters["name"],
+                location: CLLocationCoordinate2D(
+                    latitude: lat,
+                    longitude: lon
+                )
+            )
             return .openForecast(
-                flow: OpenForecastFlow(
-                    input: OpenForecastFlow.Input(
-                        name: "🥶🥶🥶",
-                        location: CLLocationCoordinate2D(latitude: 63.463446, longitude: 142.769950)
+                flow: OpenForecastFlow(input: input)
+            )
+        case .search:
+            return .searchForecast(
+                flow: SearchForecastFlow(
+                    input: SearchForecastFlow.Input(
+                        query: parameters["query"]
                     )
                 )
             )
-        } else if url.absoluteString.contains("searchForecast") {
-            return .searchForecast(
-                flow: SearchForecastFlow(
-                    input: SearchForecastFlow.Input(query: "Stockholm")
-                )
-            )
+        default:
+            return nil
         }
-        return nil
     }
 }
 
@@ -102,4 +123,9 @@ extension DeeplinkRouterImpl: DeeplinkRouter {
         case .none: ()
         }
     }
+}
+
+private extension String {
+    static var openForecast: String { "openForecast" }
+    static var search: String { "search" }
 }

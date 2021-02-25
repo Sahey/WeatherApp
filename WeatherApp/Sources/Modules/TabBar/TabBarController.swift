@@ -33,7 +33,7 @@ final class TabBarController: UITabBarController {
         viewControllers = [
             UINavigationController(rootViewController: weatherModule.title("Current location forecast"))
                 .tabBarItem(UITabBarItem(title: nil, image: UIImage(systemName: "cloud.sun.rain"), tag: .weather)),
-            UINavigationController(rootViewController: searchModule)
+            UINavigationController(rootViewController: searchModule.title("Weather forecast"))
                 .tabBarItem(UITabBarItem(title: nil, image: UIImage(systemName: "magnifyingglass"), tag: .search))
         ]
     }
@@ -43,14 +43,12 @@ extension TabBarController: TabBarDeeplinkable {
     func openWeather() -> AnyPublisher<TabBarDeeplinkable, Never> {
         selectedIndex = .weather
         return Just(self)
-            .delay(for: 0.3, scheduler: RunLoop.main)
             .eraseToAnyPublisher()
     }
 
     func openSearch() -> AnyPublisher<SearchDeeplinkable, Never> {
         selectedIndex = .search
         return Just(searchModule)
-            .delay(for: 0.3, scheduler: RunLoop.main)
             .eraseToAnyPublisher()
     }
 }

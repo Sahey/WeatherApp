@@ -53,14 +53,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             root.startApp()
         }
-        testDeeplink()
     }
 
-    private func testDeeplink() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            self.deeplinkRouter.route(url: URL(string:"weather://searchForecast")!)
-            self.deeplinkRouter.route(url: URL(string:"weather://openForecast")!)
-        }
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let url = URLContexts.first?.url else { return }
+        deeplinkRouter.route(url: url)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
