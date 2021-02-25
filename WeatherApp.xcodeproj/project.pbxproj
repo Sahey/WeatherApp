@@ -56,6 +56,7 @@
 		A0C321E225E817B000CC5CF0 /* DeeplinkStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C321E025E817B000CC5CF0 /* DeeplinkStep.swift */; };
 		A0C321E325E817B000CC5CF0 /* DeeplinkFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C321E125E817B000CC5CF0 /* DeeplinkFlow.swift */; };
 		A0C321E925E817D300CC5CF0 /* ModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C321E825E817D300CC5CF0 /* ModuleAssembly.swift */; };
+		A0C321F225E81D3B00CC5CF0 /* DeeplinkTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C321F125E81D3B00CC5CF0 /* DeeplinkTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		A0C321E025E817B000CC5CF0 /* DeeplinkStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeeplinkStep.swift; sourceTree = "<group>"; };
 		A0C321E125E817B000CC5CF0 /* DeeplinkFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeeplinkFlow.swift; sourceTree = "<group>"; };
 		A0C321E825E817D300CC5CF0 /* ModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleAssembly.swift; sourceTree = "<group>"; };
+		A0C321F125E81D3B00CC5CF0 /* DeeplinkTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 		A026AB2525D446DC00A95DCC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A0C321F025E81D2B00CC5CF0 /* DeeplinkTest */,
 				A0C321E825E817D300CC5CF0 /* ModuleAssembly.swift */,
 				A0B1234525D9A0DB003A4ED1 /* Root */,
 				A0B1235625D9A670003A4ED1 /* TabBar */,
@@ -345,6 +348,14 @@
 			path = Deeplink;
 			sourceTree = "<group>";
 		};
+		A0C321F025E81D2B00CC5CF0 /* DeeplinkTest */ = {
+			isa = PBXGroup;
+			children = (
+				A0C321F125E81D3B00CC5CF0 /* DeeplinkTestViewController.swift */,
+			);
+			path = DeeplinkTest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -464,6 +475,7 @@
 				A026ABDC25D44A6900A95DCC /* WeatherPresenter.swift in Sources */,
 				A0B1234F25D9A600003A4ED1 /* RootBuilder.swift in Sources */,
 				A0B123A925D9D9DC003A4ED1 /* TabBarController.swift in Sources */,
+				A0C321F225E81D3B00CC5CF0 /* DeeplinkTestViewController.swift in Sources */,
 				A0B1237825D9B1A2003A4ED1 /* SearchBuilder.swift in Sources */,
 				A0B1236A25D9ADC1003A4ED1 /* UIViewController+Extension.swift in Sources */,
 				A0B123B625D9E31C003A4ED1 /* DeeplinkRouter.swift in Sources */,

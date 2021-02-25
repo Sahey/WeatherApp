@@ -126,6 +126,6 @@ extension DeeplinkRouterImpl: DeeplinkRouter {
 }
 
 private extension String {
-    static var openForecast: String { "openForecast" }
+    static var openForecast: String { "forecast" }
     static var search: String { "search" }
 }
