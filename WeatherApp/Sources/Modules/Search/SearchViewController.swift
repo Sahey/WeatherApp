@@ -108,7 +108,6 @@ private extension UITableViewCell {
 
 extension SearchViewController: SearchDeeplinkable {
     func searchForecast() -> AnyPublisher<SearchDeeplinkable, Never> {
-        navigationItem.searchController?.isActive = true
         return Just(self).eraseToAnyPublisher()
     }
 
