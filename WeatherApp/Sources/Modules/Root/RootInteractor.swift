@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 protocol RootInteractor {
     func startApp()
@@ -17,7 +18,7 @@ protocol RootDeeplinkable: AnyObject {
 
 final class RootInteractorImpl: RootInteractor {
     private let router: RootRouter
-    private var tabBarDeeplinkable: TabBarDeeplinkable?
+    private var tabBarPublisher = CurrentValueSubject<TabBarDeeplinkable?, Never>(nil)
 
     init(router: RootRouter) {
         self.router = router
@@ -26,7 +27,7 @@ final class RootInteractorImpl: RootInteractor {
     @discardableResult
     private func startTabBar() -> TabBarDeeplinkable {
         let deeplinkable = router.routeToTabBar()
-        tabBarDeeplinkable = deeplinkable
+        tabBarPublisher.send(deeplinkable)
         return deeplinkable
     }
 
@@ -38,9 +39,8 @@ final class RootInteractorImpl: RootInteractor {
 
 extension RootInteractorImpl: RootDeeplinkable {
     func openTabBar() -> AnyPublisher<TabBarDeeplinkable, Never> {
-        guard let tabBarDeeplinkable = tabBarDeeplinkable else {
-            return Just(startTabBar()).eraseToAnyPublisher()
-        }
-        return Just(tabBarDeeplinkable).eraseToAnyPublisher()
+        tabBarPublisher
+            .compactMap { $0 }
+            .eraseToAnyPublisher()
     }
 }
