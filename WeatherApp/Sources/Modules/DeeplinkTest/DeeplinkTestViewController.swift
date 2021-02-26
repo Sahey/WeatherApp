@@ -36,11 +36,11 @@ final class DeeplinkTestViewController: UIViewController {
     }
 
     @objc private func testSearch() {
-        open("weatherapp://search?query=Vladivostok")
+        print("test search")
     }
 
     @objc private func testForecast() {
-        open("weatherapp://forecast?name=cool&lat=20.050342&lon=18.213909")
+        print("test forecast")
     }
 
     private func open(_ link: String) {

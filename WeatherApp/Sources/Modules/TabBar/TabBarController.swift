@@ -35,9 +35,7 @@ final class TabBarController: UITabBarController {
             UINavigationController(rootViewController: weatherModule.title("Current location forecast"))
                 .tabBarItem(UITabBarItem(title: nil, image: UIImage(systemName: "cloud.sun.rain"), tag: .weather)),
             UINavigationController(rootViewController: searchModule.title("Weather forecast"))
-                .tabBarItem(UITabBarItem(title: nil, image: UIImage(systemName: "magnifyingglass"), tag: .search)),
-            deeplinkTest
-                .tabBarItem(UITabBarItem(title: nil, image: UIImage(systemName: "ladybug"), tag: .test))
+                .tabBarItem(UITabBarItem(title: nil, image: UIImage(systemName: "magnifyingglass"), tag: .search))
         ]
     }
 }
@@ -59,5 +57,4 @@ extension TabBarController: TabBarDeeplinkable {
 private extension Int {
     static var weather: Int { 0 }
     static var search: Int { 1 }
-    static var test: Int { 2 }
 }
