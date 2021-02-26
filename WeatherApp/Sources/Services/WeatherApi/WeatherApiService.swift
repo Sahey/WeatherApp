@@ -74,6 +74,7 @@ protocol WeatherApiService {
 final class WeatherApiServiceMock: WeatherApiService {
     func fetch(request: WeatherApi.Request, completion: @escaping (Result<WeatherApi.Response, WeatherApi.Error>) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            let temperature: Float = .random(in: 20...30)
             completion(
                 .success(WeatherApi.Response(
                             latitude: 50,
@@ -85,8 +86,8 @@ final class WeatherApiServiceMock: WeatherApiService {
                                 icon: nil,
                                 precipIntensity: 0,
                                 precipProbability: 0,
-                                temperature: 27.5,
-                                apparentTemperature: 27.5,
+                                temperature: temperature,
+                                apparentTemperature: temperature + .random(in: -4...2),
                                 dewPoint: 0,
                                 humidity: 13,
                                 pressure: 1017.2,
