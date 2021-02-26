@@ -9,55 +9,6 @@ import Combine
 import CoreLocation
 import Foundation
 
-// MARK: - Flows
-
-final class OpenCurrentLocationFlow: DeeplinkFlow<RootDeeplinkable> {
-    override init() {
-        super.init()
-        onStep { root in
-            root.openTabBar()
-        }
-        .onStep { tabBar in
-            tabBar.openWeather()
-        }
-        .commit()
-    }
-}
-
-class SearchFlow: DeeplinkFlow<RootDeeplinkable> {
-    override init() {
-        super.init()
-        onStep { root in
-            root.openTabBar()
-        }
-        .onStep { tabBar in
-            tabBar.openSearch()
-        }
-        .commit()
-    }
-}
-
-
-final class OpenForecastFlow: DeeplinkFlow<RootDeeplinkable> {
-    struct Input {
-        let name: String?
-        let location: CLLocationCoordinate2D
-    }
-
-    init(input: Input) {
-        super.init()
-        onStep { root in
-            root.openTabBar()
-        }
-        .onStep { tabBar in
-            tabBar.openSearch()
-        }
-        .onStep { search in
-            search.openWeather(input: input)
-        }
-        .commit()
-    }
-}
 // MARK: - Router
 
 protocol DeeplinkRouter {

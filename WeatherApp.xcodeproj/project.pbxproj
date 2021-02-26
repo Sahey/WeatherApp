@@ -27,6 +27,8 @@
 		A026AC2225D468AC00A95DCC /* WeatherApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A026AC2125D468AC00A95DCC /* WeatherApiService.swift */; };
 		A026AC2A25D46EA800A95DCC /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A026AC2925D46EA800A95DCC /* LocationProvider.swift */; };
 		A026AC3225D493B900A95DCC /* WeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A026AC3125D493B900A95DCC /* WeatherRouter.swift */; };
+		A0771FBF25E927B200D41AA7 /* SearchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0771FBE25E927B200D41AA7 /* SearchFlow.swift */; };
+		A0771FC525E927C900D41AA7 /* OpenCurrentLocationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0771FC425E927C900D41AA7 /* OpenCurrentLocationFlow.swift */; };
 		A0B1234725D9A0E9003A4ED1 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1234625D9A0E9003A4ED1 /* RootInteractor.swift */; };
 		A0B1234B25D9A5FA003A4ED1 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1234A25D9A5FA003A4ED1 /* RootRouter.swift */; };
 		A0B1234F25D9A600003A4ED1 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1234E25D9A600003A4ED1 /* RootBuilder.swift */; };
@@ -94,6 +96,8 @@
 		A026AC2125D468AC00A95DCC /* WeatherApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiService.swift; sourceTree = "<group>"; };
 		A026AC2925D46EA800A95DCC /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		A026AC3125D493B900A95DCC /* WeatherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouter.swift; sourceTree = "<group>"; };
+		A0771FBE25E927B200D41AA7 /* SearchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlow.swift; sourceTree = "<group>"; };
+		A0771FC425E927C900D41AA7 /* OpenCurrentLocationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCurrentLocationFlow.swift; sourceTree = "<group>"; };
 		A0B1234625D9A0E9003A4ED1 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
 		A0B1234A25D9A5FA003A4ED1 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		A0B1234E25D9A600003A4ED1 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
@@ -260,6 +264,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		A0771FBD25E927A800D41AA7 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				A0771FC425E927C900D41AA7 /* OpenCurrentLocationFlow.swift */,
+				A0771FBE25E927B200D41AA7 /* SearchFlow.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
 		A0B1234525D9A0DB003A4ED1 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +320,7 @@
 		A0B123B025D9E019003A4ED1 /* DeeplinkRouter */ = {
 			isa = PBXGroup;
 			children = (
+				A0771FBD25E927A800D41AA7 /* Flows */,
 				A0B123B525D9E31C003A4ED1 /* DeeplinkRouter.swift */,
 			);
 			path = DeeplinkRouter;
@@ -458,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0B1238425D9B348003A4ED1 /* SearchInteractor.swift in Sources */,
+				A0771FC525E927C900D41AA7 /* OpenCurrentLocationFlow.swift in Sources */,
 				A0B7D4E125D7ED3E0004E3A8 /* DependencyContainer.swift in Sources */,
 				A0B1234B25D9A5FA003A4ED1 /* RootRouter.swift in Sources */,
 				A0B7D4EF25D8075F0004E3A8 /* DependencyAssembler.swift in Sources */,
@@ -492,6 +507,7 @@
 				A026AC0525D456EA00A95DCC /* TableViewCell.swift in Sources */,
 				A026AB1E25D4466C00A95DCC /* SceneDelegate.swift in Sources */,
 				A0B1237E25D9B1EB003A4ED1 /* SearchAssembly.swift in Sources */,
+				A0771FBF25E927B200D41AA7 /* SearchFlow.swift in Sources */,
 				A0B1235325D9A609003A4ED1 /* RootAssembly.swift in Sources */,
 				A026AC3225D493B900A95DCC /* WeatherRouter.swift in Sources */,
 				A0B1236025D9AB1D003A4ED1 /* TabBarAssembly.swift in Sources */,
