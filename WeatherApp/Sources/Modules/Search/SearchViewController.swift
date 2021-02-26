@@ -10,7 +10,7 @@ import UIKit
 
 protocol SearchDeeplinkable {
     func openWeather(input: OpenForecastFlow.Input) -> AnyPublisher<SearchDeeplinkable, Never>
-    func searchForecast(input: SearchForecastFlow.Input) -> AnyPublisher<SearchDeeplinkable, Never>
+    func searchForecast() -> AnyPublisher<SearchDeeplinkable, Never>
 }
 
 protocol SearchDisplayLogic: AnyObject {
@@ -107,12 +107,8 @@ private extension UITableViewCell {
 }
 
 extension SearchViewController: SearchDeeplinkable {
-    func searchForecast(input: SearchForecastFlow.Input) -> AnyPublisher<SearchDeeplinkable, Never> {
+    func searchForecast() -> AnyPublisher<SearchDeeplinkable, Never> {
         navigationItem.searchController?.isActive = true
-        navigationItem.searchController?.searchBar.text = input.query
-        if let query = input.query {
-            interactor.didSearch(query: query)
-        }
         return Just(self).eraseToAnyPublisher()
     }
 

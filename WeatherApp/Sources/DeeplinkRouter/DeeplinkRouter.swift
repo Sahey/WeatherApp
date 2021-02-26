@@ -11,6 +11,33 @@ import Foundation
 
 // MARK: - Flows
 
+final class OpenCurrentLocationFlow: DeeplinkFlow<RootDeeplinkable> {
+    override init() {
+        super.init()
+        onStep { root in
+            root.openTabBar()
+        }
+        .onStep { tabBar in
+            tabBar.openWeather()
+        }
+        .commit()
+    }
+}
+
+class SearchFlow: DeeplinkFlow<RootDeeplinkable> {
+    override init() {
+        super.init()
+        onStep { root in
+            root.openTabBar()
+        }
+        .onStep { tabBar in
+            tabBar.openSearch()
+        }
+        .commit()
+    }
+}
+
+
 final class OpenForecastFlow: DeeplinkFlow<RootDeeplinkable> {
     struct Input {
         let name: String?
@@ -31,27 +58,6 @@ final class OpenForecastFlow: DeeplinkFlow<RootDeeplinkable> {
         .commit()
     }
 }
-
-final class SearchForecastFlow: DeeplinkFlow<RootDeeplinkable> {
-    struct Input {
-        let query: String?
-    }
-
-    init(input: Input) {
-        super.init()
-        onStep { root in
-            root.openTabBar()
-        }
-        .onStep { tabBar in
-            tabBar.openSearch()
-        }
-        .onStep { search in
-            search.searchForecast(input: input)
-        }
-        .commit()
-    }
-}
-
 // MARK: - Router
 
 protocol DeeplinkRouter {
@@ -65,8 +71,8 @@ enum Deeplink: String {
 
 final class DeeplinkRouterImpl {
     enum Flow {
-        case openForecast(flow: OpenForecastFlow)
-        case searchForecast(flow: SearchForecastFlow)
+        case current(flow: OpenCurrentLocationFlow)
+        case search(flow: SearchFlow)
     }
 
     private var subscribtions: Set<AnyCancellable>?
@@ -84,29 +90,10 @@ final class DeeplinkRouterImpl {
             parameters[$0.name] = $0.value
         }
         switch host {
-        case .openForecast:
-            guard let latStr = parameters["lat"],
-                  let lonStr = parameters["lon"],
-                  let lat = Double(latStr),
-                  let lon = Double(lonStr) else { return nil }
-            let input = OpenForecastFlow.Input(
-                name: parameters["name"],
-                location: CLLocationCoordinate2D(
-                    latitude: lat,
-                    longitude: lon
-                )
-            )
-            return .openForecast(
-                flow: OpenForecastFlow(input: input)
-            )
         case .search:
-            return .searchForecast(
-                flow: SearchForecastFlow(
-                    input: SearchForecastFlow.Input(
-                        query: parameters["query"]
-                    )
-                )
-            )
+            return .search(flow: SearchFlow())
+        case .current:
+            return .current(flow: OpenCurrentLocationFlow())
         default:
             return nil
         }
@@ -116,9 +103,9 @@ final class DeeplinkRouterImpl {
 extension DeeplinkRouterImpl: DeeplinkRouter {
     func route(url: URL) {
         switch createFlow(url: url) {
-        case let .openForecast(flow):
+        case let .current(flow):
             subscribtions = flow.subcscribe(root)
-        case let .searchForecast(flow):
+        case let .search(flow):
             subscribtions = flow.subcscribe(root)
         case .none: ()
         }
@@ -126,6 +113,8 @@ extension DeeplinkRouterImpl: DeeplinkRouter {
 }
 
 private extension String {
-    static var openForecast: String { "forecast" }
+    //    weatherapp://current
+    static var current: String { "current" }
+    //    weatherapp://search
     static var search: String { "search" }
 }
