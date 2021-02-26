@@ -71,6 +71,36 @@ protocol WeatherApiService {
     func fetch(request: WeatherApi.Request, completion: @escaping (Result<WeatherApi.Response, WeatherApi.Error>) -> Void)
 }
 
+final class WeatherApiServiceMock: WeatherApiService {
+    func fetch(request: WeatherApi.Request, completion: @escaping (Result<WeatherApi.Response, WeatherApi.Error>) -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            completion(
+                .success(WeatherApi.Response(
+                            latitude: 50,
+                            longitude: 50,
+                            timezone: nil,
+                            currently: WeatherApi.Response.Weather(
+                                time: Date().timeIntervalSince1970,
+                                summary: "Clear",
+                                icon: nil,
+                                precipIntensity: 0,
+                                precipProbability: 0,
+                                temperature: 27.5,
+                                apparentTemperature: 27.5,
+                                dewPoint: 0,
+                                humidity: 13,
+                                pressure: 1017.2,
+                                windSpeed: 1.2,
+                                windGust: 2,
+                                windBearing: 123,
+                                cloudCover: 0,
+                                uvIndex: 0,
+                                visibility: 50,
+                                ozone: 0))))
+        }
+    }
+}
+
 final class WeatherApiServiceImpl: WeatherApiService {
     func fetch(request: WeatherApi.Request, completion: @escaping (Result<WeatherApi.Response, WeatherApi.Error>) -> Void) {
         let url = URL(string: "https://api.darksky.net/forecast/2bb07c3bece89caf533ac9a5d23d8417/\(request.location.latitude),\(request.location.longitude)?units=si")

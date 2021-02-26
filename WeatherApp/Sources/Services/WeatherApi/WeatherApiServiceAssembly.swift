@@ -8,7 +8,8 @@
 final class WeatherApiServiceAssembly: DependencyAssembly {
     func assemble(container: DependencyContainer) {
         container.register(WeatherApiService.self) { _ in
-            WeatherApiServiceImpl()
+//            WeatherApiServiceImpl()
+            WeatherApiServiceMock()
         }
     }
 }
